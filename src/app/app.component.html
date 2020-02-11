@@ -1,0 +1,25 @@
+<style>
+  .rowCont{
+    display:inline-block;
+    position:relative;
+    padding:1em;
+    width:25%;
+  }
+  div span{
+    padding:0 20px;
+  }
+  .active{
+    background-color:grey;
+  }
+
+</style>
+<div class="container">
+<div>
+  <span (click)="goPrev()">Prev</span>
+  <span>{{toggler ? 'Year':selectedYear}}</span>
+  <span (click)="goNext()">Next</span>
+</div>
+<div #calCont>
+    <div class="rowCont" *ngFor="let k of toggler ? count : months;">{{toggler ? startYear + k : k}}</div>
+</div>
+</div>
